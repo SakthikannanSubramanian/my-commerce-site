@@ -5,7 +5,7 @@ import ShopPage from "./components/shop/shop-component";
 import Header from "./components/header/header.component";
 import Authentication from "./components/authentication/authentication.component";
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 
@@ -39,15 +39,25 @@ class App extends React.Component {
         <Switch>
           <Route exact path="/" component={HomePage} />
           <Route exact path="/shop" component={ShopPage} />
-          <Route exact path="/authentication" component={Authentication} />
+          <Route
+            exact
+            path="/authentication"
+            render={() =>
+              this.props.currentUser ? <Redirect to="/" /> : <Authentication />
+            }
+          />
         </Switch>
       </div>
     );
   }
 }
 
+const mapStateToProps = ({ user }) => ({
+  currentUser: user.currentUser,
+});
+
 const mapDispatchToProps = (dispatch) => ({
   setCurrentUser: (user) => dispatch(setCurrentUser(user)),
 });
 
-export default connect(null, mapDispatchToProps)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
