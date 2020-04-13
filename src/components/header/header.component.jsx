@@ -4,8 +4,10 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/shopping-cart.svg";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
+import TrolleyOverview from "../trolley-overview/trolley-overview.component";
+import MiniTrolley from "../mini-trolley/mini-troley.component";
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, showMiniTrolley }) => (
   <div className="header">
     <Link className="logo-container" to="/">
       <Logo className="logo" />
@@ -30,12 +32,16 @@ const Header = ({ currentUser }) => (
           SIGN IN
         </Link>
       )}
+      <TrolleyOverview />
     </div>
+    {console.log(showMiniTrolley)}
+    {showMiniTrolley && <MiniTrolley />}
   </div>
 );
 
 const mapStateToProps = (state) => ({
   currentUser: state.user.currentUser,
+  showMiniTrolley: state.trolley.showMiniTrolley,
 });
 
 export default connect(mapStateToProps)(Header);
