@@ -4,10 +4,12 @@ import { ReactComponent as TrolleyOverViewIcon } from "../../assets/trolleyBag.s
 import { connect } from "react-redux";
 import { showMiniTrolley } from "../../redux/trolley/trolley.actions";
 
-const TrolleyOverview = ({ toggleMiniTrolleyDisplay }) => (
+const TrolleyOverview = ({ toggleMiniTrolleyDisplay, trolleyItems }) => (
   <div className="trolleyOverview" onClick={toggleMiniTrolleyDisplay}>
     <TrolleyOverViewIcon className="trolley-overview-icon" />
-    <span className="item-count">0</span>
+    <span className="item-count">
+      {trolleyItems.reduce((total, item) => total + item.quantity, 0)}
+    </span>
   </div>
 );
 
@@ -15,4 +17,8 @@ const mapDispatchToProps = (dispatch) => ({
   toggleMiniTrolleyDisplay: () => dispatch(showMiniTrolley()),
 });
 
-export default connect(null, mapDispatchToProps)(TrolleyOverview);
+const mapStateToProps = ({ trolley: { trolleyItems } }) => ({
+  trolleyItems: trolleyItems,
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(TrolleyOverview);
