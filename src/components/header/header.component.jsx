@@ -34,7 +34,6 @@ const Header = ({ currentUser, showMiniTrolley }) => (
       )}
       <TrolleyOverview />
     </div>
-    {console.log(showMiniTrolley)}
     {showMiniTrolley && <MiniTrolley />}
   </div>
 );

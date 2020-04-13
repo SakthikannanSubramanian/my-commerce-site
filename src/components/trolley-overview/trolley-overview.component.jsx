@@ -4,8 +4,8 @@ import { ReactComponent as TrolleyOverViewIcon } from "../../assets/trolleyBag.s
 import { connect } from "react-redux";
 import { showMiniTrolley } from "../../redux/trolley/trolley.actions";
 
-const TrolleyOverview = (props) => (
-  <div className="trolleyOverview" onClick={props.toggleMiniTrolleyDisplay}>
+const TrolleyOverview = ({ toggleMiniTrolleyDisplay }) => (
+  <div className="trolleyOverview" onClick={toggleMiniTrolleyDisplay}>
     <TrolleyOverViewIcon className="trolley-overview-icon" />
     <span className="item-count">0</span>
   </div>
