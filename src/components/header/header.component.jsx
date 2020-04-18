@@ -5,7 +5,10 @@ import { ReactComponent as Logo } from "../../assets/shopping-cart.svg";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import TrolleyOverview from "../trolley-overview/trolley-overview.component";
-import MiniTrolley from "../mini-trolley/mini-troley.component";
+import MiniTrolley from "../mini-trolley/mini-trolley.component";
+import { createStructuredSelector } from "reselect";
+import { selectShowMiniTrolley } from "../../redux/trolley/trolley.selectors";
+import { selectCurrentUser } from "../../redux/user/user.selector";
 
 const Header = ({ currentUser, showMiniTrolley }) => (
   <div className="header">
@@ -38,9 +41,9 @@ const Header = ({ currentUser, showMiniTrolley }) => (
   </div>
 );
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
-  showMiniTrolley: state.trolley.showMiniTrolley,
+const mapStateToProps = createStructuredSelector({
+  currentUser: selectCurrentUser,
+  showMiniTrolley: selectShowMiniTrolley,
 });
 
 export default connect(mapStateToProps)(Header);
