@@ -11,6 +11,7 @@ import { connect } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 import { selectCurrentUser } from "./redux/user/user.selector";
 import { createStructuredSelector } from "reselect";
+import CategoryPage from "./components/category-page/category-page.component";
 
 class App extends React.Component {
   unSubscribeFromAuth = null;
@@ -50,6 +51,7 @@ class App extends React.Component {
             }
           />
           <Route exact path="/checkout" component={CheckoutPage} />
+          <Route path="/shop/:categoryId" component={CategoryPage} />
         </Switch>
       </div>
     );

@@ -12,11 +12,11 @@ export const directorySections = [
     linkUrl: "shop/sneakers",
   },
   {
-    title: "caps",
+    title: "hats",
     imageUrl:
       "https://www.publicdomainpictures.net/pictures/50000/velka/hoeden-en-petten-02.jpg",
     id: 1,
-    linkUrl: "shop/caps",
+    linkUrl: "shop/hats",
   },
   {
     title: "mens",

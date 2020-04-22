@@ -8,8 +8,9 @@ import {
 import TrolleyPod from "../trolleyPod/trolleyPod.component";
 import "./checkout.styles.scss";
 
-const CheckoutPage = ({ cartItems, trolleyTotal }) => (
+const CheckoutPage = ({ cartItems, trolleyTotal, match }) => (
   <div className="checkout-page">
+    {console.log(match)}
     <div className="checkout-header">
       <div className="header-block">
         <span>Product</span>
