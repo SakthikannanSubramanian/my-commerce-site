@@ -15,7 +15,9 @@ const Header = ({ currentUser, showMiniTrolley }) => (
     <Link className="logo-container" to="/">
       <Logo className="logo" />
     </Link>
-
+    <div className="headerTitle">
+      <label>Sakthi Sweets</label>
+    </div>
     <div className="options">
       <label className="option">
         Hi! {currentUser ? currentUser.displayName : "New User"}

@@ -5,6 +5,18 @@
   justify-content: space-between;
   margin-bottom: 25px;
 
+  .headerTitle {
+    height: 100%;
+    padding: 12px;
+    margin-left: auto;
+
+    label {
+      font-size: 32px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+  }
+
   .logo-container {
     height: 100%;
     width: 70px;
