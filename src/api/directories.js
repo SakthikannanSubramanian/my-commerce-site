@@ -30,7 +30,8 @@ export const directorySections = [
   },
   {
     title: "cakes",
-    imageUrl: "https://live.staticflickr.com/4833/44560001020_e6a7c15833_b.jpg",
+    imageUrl:
+      "https://c0.wallpaperflare.com/preview/190/832/24/baked-cake-cakes-close-up.jpg",
     size: "large",
     id: 4,
     linkUrl: "shop/cakes",
