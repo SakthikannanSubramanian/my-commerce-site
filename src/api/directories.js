@@ -1,35 +1,38 @@
 export const directorySections = [
   {
-    title: "jackets",
-    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    id: 2,
-    linkUrl: "shop/jackets",
-  },
-  {
-    title: "sneakers",
-    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    id: 3,
-    linkUrl: "shop/sneakers",
-  },
-  {
-    title: "hats",
+    title: "sweets",
     imageUrl:
-      "https://www.publicdomainpictures.net/pictures/50000/velka/hoeden-en-petten-02.jpg",
+      "https://p2.piqsels.com/preview/866/519/654/sweets-round-patiala-punjab.jpg",
     id: 1,
-    linkUrl: "shop/hats",
+    linkUrl: "shop/sweets",
   },
   {
-    title: "mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+    title: "snacks",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Achappam_Rose_Cookie_Achu_Murukku_%282%29.jpg/1024px-Achappam_Rose_Cookie_Achu_Murukku_%282%29.jpg",
+    id: 3,
+    linkUrl: "shop/snacks",
+  },
+  {
+    title: "chats",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Potato_Pakoda.JPG/640px-Potato_Pakoda.JPG",
+    id: 2,
+    linkUrl: "shop/chats",
+  },
+  {
+    title: "short-bites",
+    imageUrl:
+      "https://upload.wikimedia.org/wikipedia/commons/b/bd/Rasmalai_-_the_King_of_Indian_Sweets.JPG",
     size: "large",
     id: 5,
-    linkUrl: "shop/mens",
+    linkUrl: "shop/short-bites",
   },
   {
-    title: "womens",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+    title: "cakes",
+    imageUrl: "https://live.staticflickr.com/4833/44560001020_e6a7c15833_b.jpg",
     size: "large",
     id: 4,
-    linkUrl: "shop/womens",
+    linkUrl: "shop/cakes",
   },
 ];

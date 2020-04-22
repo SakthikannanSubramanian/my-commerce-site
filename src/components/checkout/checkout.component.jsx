@@ -7,6 +7,7 @@ import {
 } from "../../redux/trolley/trolley.selectors";
 import TrolleyPod from "../trolleyPod/trolleyPod.component";
 import "./checkout.styles.scss";
+import StripeCheckoutButton from "../stripe-button/stripe-button.component";
 
 const CheckoutPage = ({ cartItems, trolleyTotal, match }) => (
   <div className="checkout-page">
@@ -29,11 +30,11 @@ const CheckoutPage = ({ cartItems, trolleyTotal, match }) => (
         <span>Remove</span>
       </div>
     </div>
-
     {cartItems.map((item) => (
       <TrolleyPod key={item.id} trolleyItem={item} />
     ))}
     <div className="total">Total: £{trolleyTotal}</div>
+    {trolleyTotal ? <StripeCheckoutButton price={trolleyTotal} /> : null}
   </div>
 );
 

@@ -1,245 +1,280 @@
 export const STORE = {
-  hats: {
+  sweets: {
     id: 1,
-    title: "Hats",
-    routeName: "hats",
+    title: "Sweets",
+    routeName: "sweets",
     items: [
       {
         id: 1,
-        name: "Brown Brim",
-        imageUrl: "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+        name: "Jelabi",
+        imageUrl:
+          "https://c1.wallpaperflare.com/preview/754/402/328/fresh-jalebi-indian-sweet-dessert-indian-thumbnail.jpg",
         price: 25,
       },
       {
         id: 2,
-        name: "Blue Beanie",
-        imageUrl: "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+        name: "Obbattu",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Obbattu.jpg/640px-Obbattu.jpg",
         price: 18,
       },
       {
         id: 3,
-        name: "Brown Cowboy",
-        imageUrl: "https://i.ibb.co/QdJwgmp/brown-cowboy.png",
+        name: "Gulab Jamun",
+        imageUrl:
+          "https://p2.piqsels.com/preview/533/218/520/indian-sweet-gulab-jamun-indian-food-thumbnail.jpg",
         price: 35,
       },
       {
         id: 4,
-        name: "Grey Brim",
-        imageUrl: "https://i.ibb.co/RjBLWxB/grey-brim.png",
+        name: "Laddoo",
+        imageUrl:
+          "https://p2.piqsels.com/preview/866/519/654/sweets-round-patiala-punjab.jpg",
         price: 25,
       },
       {
         id: 5,
-        name: "Green Beanie",
-        imageUrl: "https://i.ibb.co/YTjW3vF/green-beanie.png",
+        name: "Milk Peda",
+        imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTwUCSkv4-JauWGW4gG9wwzXtNFrnOAZLIsbbUdWL6w_DQxu_rw&usqp=CAU",
         price: 18,
       },
       {
         id: 6,
-        name: "Palm Tree Cap",
-        imageUrl: "https://i.ibb.co/rKBDvJX/palm-tree-cap.png",
+        name: "Adhirasam",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Athirasam_of_Salem.jpg/1024px-Athirasam_of_Salem.jpg",
         price: 14,
       },
       {
         id: 7,
-        name: "Red Beanie",
-        imageUrl: "https://i.ibb.co/bLB646Z/red-beanie.png",
+        name: "Chandrakala",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/0/03/Chandrakala_The_Grand_Sweets_And_Snacks.jpg",
         price: 18,
       },
       {
         id: 8,
-        name: "Wolf Cap",
-        imageUrl: "https://i.ibb.co/1f2nWMM/wolf-cap.png",
+        name: "Halwa",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Calicut_Black_Halwa_%28cropped%29.jpg/768px-Calicut_Black_Halwa_%28cropped%29.jpg",
         price: 14,
       },
       {
         id: 9,
-        name: "Blue Snapback",
-        imageUrl: "https://i.ibb.co/X2VJP2W/blue-snapback.png",
+        name: "Mysore Pak",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Mysore_pak.jpg/1024px-Mysore_pak.jpg",
         price: 16,
       },
     ],
   },
-  sneakers: {
+  snacks: {
     id: 2,
-    title: "Sneakers",
-    routeName: "sneakers",
+    title: "Snacks",
+    routeName: "snacks",
     items: [
       {
         id: 10,
-        name: "Adidas NMD",
-        imageUrl: "https://i.ibb.co/0s3pdnc/adidas-nmd.png",
+        name: "Masala Peanut",
+        imageUrl:
+          "https://c1.wallpaperflare.com/preview/640/381/76/peanuts-spicy-nuts-crispy-spicy.jpg",
         price: 220,
       },
       {
         id: 11,
-        name: "Adidas Yeezy",
-        imageUrl: "https://i.ibb.co/dJbG1cT/yeezy.png",
+        name: "Fried Sevu",
+        imageUrl:
+          "https://p1.pxfuel.com/preview/545/152/1014/fried-spicy-sticks-indian.jpg",
         price: 280,
       },
       {
         id: 12,
-        name: "Black Converse",
-        imageUrl: "https://i.ibb.co/bPmVXyP/black-converse.png",
+        name: "Potato Crisps",
+        imageUrl:
+          "https://c1.wallpaperflare.com/preview/866/108/953/bowl-calories-chips-crisp.jpg",
         price: 110,
       },
       {
         id: 13,
-        name: "Nike White AirForce",
-        imageUrl: "https://i.ibb.co/1RcFPk0/white-nike-high-tops.png",
+        name: "Mixure",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Bombaymix.jpg/664px-Bombaymix.jpg",
         price: 160,
       },
       {
         id: 14,
-        name: "Nike Red High Tops",
-        imageUrl: "https://i.ibb.co/QcvzydB/nikes-red.png",
+        name: "Pommos",
+        imageUrl:
+          "https://live.staticflickr.com/515/20006982466_1ed5ca3a45_b.jpg",
         price: 160,
       },
       {
         id: 15,
-        name: "Nike Brown High Tops",
-        imageUrl: "https://i.ibb.co/fMTV342/nike-brown.png",
+        name: "Murukku",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Achchu_murukku.jpg/1024px-Achchu_murukku.jpg",
         price: 160,
       },
       {
         id: 16,
-        name: "Air Jordan Limited",
-        imageUrl: "https://i.ibb.co/w4k6Ws9/nike-funky.png",
+        name: "Achhu",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Achappam_Rose_Cookie_Achu_Murukku_%282%29.jpg/1024px-Achappam_Rose_Cookie_Achu_Murukku_%282%29.jpg",
         price: 190,
       },
       {
         id: 17,
-        name: "Timberlands",
-        imageUrl: "https://i.ibb.co/Mhh6wBg/timberlands.png",
+        name: "Seedai",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/South_Indian_traditional_sweets_called_%22Seedai%22_in_tamil_made_from_jaggery%2C_rice_flour_and_grated_coconut.jpg/640px-South_Indian_traditional_sweets_called_%22Seedai%22_in_tamil_made_from_jaggery%2C_rice_flour_and_grated_coconut.jpg",
         price: 200,
       },
     ],
   },
-  jackets: {
+  chats: {
     id: 3,
-    title: "Jackets",
-    routeName: "jackets",
+    title: "Chats",
+    routeName: "chats",
     items: [
       {
         id: 18,
-        name: "Black Jean Shearling",
-        imageUrl: "https://i.ibb.co/XzcwL5s/black-shearling.png",
+        name: "Pani Poori",
+        imageUrl:
+          "https://live.staticflickr.com/7171/6456856581_b68cf171fd_b.jpg",
         price: 125,
       },
       {
         id: 19,
-        name: "Blue Jean Jacket",
-        imageUrl: "https://i.ibb.co/mJS6vz0/blue-jean-jacket.png",
+        name: "Samosa",
+        imageUrl:
+          "https://live.staticflickr.com/3951/15334396887_36be18a46d_b.jpg",
         price: 90,
       },
       {
         id: 20,
-        name: "Grey Jean Jacket",
-        imageUrl: "https://i.ibb.co/N71k1ML/grey-jean-jacket.png",
+        name: "Pakoda",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Potato_Pakoda.JPG/640px-Potato_Pakoda.JPG",
         price: 90,
       },
       {
         id: 21,
-        name: "Brown Shearling",
-        imageUrl: "https://i.ibb.co/s96FpdP/brown-shearling.png",
+        name: "Thattu Murukku",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Pav_spl.jpg/640px-Pav_spl.jpg",
         price: 165,
       },
       {
         id: 22,
-        name: "Tan Trench",
-        imageUrl: "https://i.ibb.co/M6hHc3F/brown-trench.png",
+        name: "Masala Pappad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Masala_Papads.JPG/640px-Masala_Papads.JPG",
         price: 185,
       },
     ],
   },
-  womens: {
+  "short-bites": {
     id: 4,
-    title: "Womens",
-    routeName: "womens",
+    title: "Short bites",
+    routeName: "short-bites",
     items: [
       {
         id: 23,
-        name: "Blue Tanktop",
-        imageUrl: "https://i.ibb.co/7CQVJNm/blue-tank.png",
+        name: "Rasamalai",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/b/bd/Rasmalai_-_the_King_of_Indian_Sweets.JPG",
         price: 25,
       },
       {
         id: 24,
-        name: "Floral Blouse",
-        imageUrl: "https://i.ibb.co/4W2DGKm/floral-blouse.png",
+        name: "Vada paav",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/63/Vada_Pav.jpg",
         price: 20,
       },
       {
         id: 25,
-        name: "Floral Dress",
-        imageUrl: "https://i.ibb.co/KV18Ysr/floral-skirt.png",
+        name: "Paav baaji",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Pav_Bhaji.jpg/360px-Pav_Bhaji.jpg",
         price: 80,
       },
       {
         id: 26,
-        name: "Red Dots Dress",
-        imageUrl: "https://i.ibb.co/N3BN1bh/red-polka-dot-dress.png",
+        name: "Dhahi vada",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Dahi_Vada_%28Dahi_Bhalla%29.jpg/768px-Dahi_Vada_%28Dahi_Bhalla%29.jpg",
         price: 80,
       },
       {
         id: 27,
-        name: "Striped Sweater",
-        imageUrl: "https://i.ibb.co/KmSkMbH/striped-sweater.png",
+        name: "Idly & Sambar",
+        imageUrl:
+          "https://c1.wallpaperflare.com/preview/691/423/649/breakfast-idli-indian-foods.jpg",
         price: 45,
       },
       {
         id: 28,
-        name: "Yellow Track Suit",
-        imageUrl: "https://i.ibb.co/v1cvwNf/yellow-track-suit.png",
+        name: "Poori",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Poori_puri_sabzi_dal_India.jpg/1024px-Poori_puri_sabzi_dal_India.jpg",
         price: 135,
       },
       {
         id: 29,
-        name: "White Blouse",
-        imageUrl: "https://i.ibb.co/qBcrsJg/white-vest.png",
+        name: "Kolukkattai",
+        imageUrl:
+          "https://live.staticflickr.com/3272/2817435806_b44320e9c4_b.jpg",
         price: 20,
       },
     ],
   },
-  mens: {
+  cakes: {
     id: 5,
-    title: "Mens",
-    routeName: "mens",
+    title: "Cakes",
+    routeName: "cakes",
     items: [
       {
         id: 30,
-        name: "Camo Down Vest",
-        imageUrl: "https://i.ibb.co/xJS0T3Y/camo-vest.png",
+        name: "Chocolate Cake",
+        imageUrl:
+          "https://live.staticflickr.com/65535/48166649437_1d6b553c8e_b.jpg",
         price: 325,
       },
       {
         id: 31,
-        name: "Floral T-shirt",
-        imageUrl: "https://i.ibb.co/qMQ75QZ/floral-shirt.png",
+        name: "Cup Cakes",
+        imageUrl:
+          "https://c0.wallpaperflare.com/preview/190/832/24/baked-cake-cakes-close-up.jpg",
         price: 20,
       },
       {
         id: 32,
-        name: "Black & White Longsleeve",
-        imageUrl: "https://i.ibb.co/55z32tw/long-sleeve.png",
+        name: "Fruit Cake",
+        imageUrl:
+          "https://live.staticflickr.com/4833/44560001020_e6a7c15833_b.jpg",
         price: 25,
       },
       {
         id: 33,
-        name: "Pink T-shirt",
-        imageUrl: "https://i.ibb.co/RvwnBL8/pink-shirt.png",
+        name: "Strawberry Cake",
+        imageUrl:
+          "https://i2.pickpik.com/photos/839/908/837/cake-food-strawberry-chocolate-preview.jpg",
         price: 25,
       },
       {
         id: 34,
-        name: "Jean Long Sleeve",
-        imageUrl: "https://i.ibb.co/VpW4x5t/roll-up-jean-shirt.png",
+        name: "Toffee Cake",
+        imageUrl:
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSHu8fcBOGcv0HdcrIxyxFbDDiTTn7mbdDPlHQ9PxQuRCpLzLkq&usqp=CAU",
         price: 40,
       },
       {
         id: 35,
-        name: "Burgundy T-shirt",
-        imageUrl: "https://i.ibb.co/mh3VM1f/polka-dot-shirt.png",
+        name: "Carrot cake",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Costa_carrot_cake_%2813070325384%29.jpg/640px-Costa_carrot_cake_%2813070325384%29.jpg",
         price: 25,
       },
     ],
