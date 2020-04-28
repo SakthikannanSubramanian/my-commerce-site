@@ -1,6 +1,4 @@
 import React from "react";
-import "./header.styles.scss";
-import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/shopping-cart.svg";
 import { auth } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
@@ -10,37 +8,40 @@ import { createStructuredSelector } from "reselect";
 import { selectShowMiniTrolley } from "../../redux/trolley/trolley.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selector";
 
+import {
+  HeaderContainer,
+  LogoContainer,
+  OptionLink,
+  OptionsContainer,
+  HeaderLabelContainer,
+  HeaderLabel,
+} from "./header.styles";
+
 const Header = ({ currentUser, showMiniTrolley }) => (
-  <div className="header">
-    <Link className="logo-container" to="/">
+  <HeaderContainer>
+    <LogoContainer to="/">
       <Logo className="logo" />
-    </Link>
-    <div className="headerTitle">
-      <label>Sakthi Sweets</label>
-    </div>
-    <div className="options">
-      <label className="option">
+    </LogoContainer>
+    <HeaderLabelContainer>
+      <HeaderLabel>Sakthi Sweets</HeaderLabel>
+    </HeaderLabelContainer>
+    <OptionsContainer>
+      <OptionLink as="div">
         Hi! {currentUser ? currentUser.displayName : "New User"}
-      </label>
-      <Link className="option" to="/shop">
-        SHOP
-      </Link>
-      <Link className="option" to="/shop">
-        CONTACT
-      </Link>
+      </OptionLink>
+      <OptionLink to="/shop">SHOP</OptionLink>
+      <OptionLink to="/shop">CONTACT</OptionLink>
       {currentUser ? (
-        <div className="option" onClick={() => auth.signOut()}>
+        <OptionLink as="div" onClick={() => auth.signOut()}>
           SIGN OUT
-        </div>
+        </OptionLink>
       ) : (
-        <Link className="option" to="/authentication">
-          SIGN IN
-        </Link>
+        <OptionLink to="/authentication">SIGN IN</OptionLink>
       )}
       <TrolleyOverview />
-    </div>
+    </OptionsContainer>
     {showMiniTrolley && <MiniTrolley />}
-  </div>
+  </HeaderContainer>
 );
 
 const mapStateToProps = createStructuredSelector({

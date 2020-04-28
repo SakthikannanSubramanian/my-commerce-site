@@ -13,7 +13,11 @@ const CollectionItem = ({ item, addItemToTrolley }) => {
         <span className="name">{name}</span>
         <span className="price">{`£${price}`}</span>
       </div>
-      <CustomButton inverted onClick={() => addItemToTrolley(item)}>
+      <CustomButton
+        className="custom-button"
+        onClick={() => addItemToTrolley(item)}
+        inverted
+      >
         Add to Trolley
       </CustomButton>
     </div>
