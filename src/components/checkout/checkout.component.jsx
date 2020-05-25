@@ -11,7 +11,6 @@ import StripeCheckoutButton from "../stripe-button/stripe-button.component";
 
 const CheckoutPage = ({ cartItems, trolleyTotal, match }) => (
   <div className="checkout-page">
-    {console.log(match)}
     <div className="checkout-header">
       <div className="header-block">
         <span>Product</span>

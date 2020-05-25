@@ -12,5 +12,6 @@ export const selectCollection = (collectionIdParam) =>
 
 export const selectCollectionsForPreview = createSelector(
   [selectCollections],
-  (collection) => Object.keys(collection).map((keys) => collection[keys])
+  (collection) =>
+    collection ? Object.keys(collection).map((keys) => collection[keys]) : []
 );
