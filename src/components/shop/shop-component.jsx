@@ -1,51 +1,62 @@
 import React from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
+import { createStructuredSelector } from "reselect";
 import CollectionOverview from "../collection-overview/collection-overview.component";
-import {
-  firestore,
-  convertCollectionSnapshotToMap,
-} from "../../firebase/firebase.utils";
+import CategoryPage from "../category-page/category-page.component";
+// import {
+//   firestore,
+//   convertCollectionSnapshotToMap,
+// } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
-import { setShopData } from "../../redux/shop/shop.actions";
+import { fetchCollectionsSuccessAsync } from "../../redux/shop/shop.actions";
+import { selectIsCollectionFetched } from "../../redux/shop/shop.selector";
 
 import WithSpinner from "../with-spinner/with-spinner.component";
 
 const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
+const CategoryOverviewWithSpinner = WithSpinner(CategoryPage);
 
 class ShopPage extends React.Component {
-  state = {
-    loading: true,
-  };
+  // state = {
+  //   loading: true,
+  // };
 
-  unSubscribeFromSnapShot = null;
+  // unSubscribeFromSnapShot = null;
 
   componentDidMount() {
-    const { updateCollections } = this.props;
-    const collectionRef = firestore.collection("collections");
-
-    this.unSubscribeFromSnapShot = collectionRef.onSnapshot(
-      async (snapShot) => {
-        const collectionsMap = convertCollectionSnapshotToMap(snapShot);
-        updateCollections(collectionsMap);
-        this.setState({ loading: false });
-      }
-    );
+    const { fetchCollectionsSuccessAsync } = this.props;
+    fetchCollectionsSuccessAsync();
+    // const { updateCollections } = this.props;
+    // const collectionRef = firestore.collection("collections");
+    // this.unSubscribeFromSnapShot = collectionRef.onSnapshot(
+    //   //instead of snapshot you can do .get() or native fetch() method with API URL. snapshot is exactly like the Observer Observable pattern
+    //   async (snapShot) => {
+    //     const collectionsMap = convertCollectionSnapshotToMap(snapShot);
+    //     updateCollections(collectionsMap);
+    //     this.setState({ loading: false });
+    //   }
+    // );
   }
 
-  // componentWillUnmount() {
-  //   this.unSubscribeFromSnapShot();
-  // }
+  componentWillUnmount() {
+    //this.unSubscribeFromSnapShot();
+  }
 
   render() {
-    const { match } = this.props;
-    const { loading } = this.state;
+    const { match, isFetching } = this.props;
     return (
       <div className="shop-page">
         <Route
           exact
           path={`${match.path}`}
           render={(props) => (
-            <CollectionOverviewWithSpinner isLoading={loading} {...props} />
+            <CollectionOverviewWithSpinner isLoading={!isFetching} {...props} />
+          )}
+        />
+        <Route
+          path={`${match.path}/:categoryId`}
+          render={(props) => (
+            <CategoryOverviewWithSpinner isLoading={!isFetching} {...props} />
           )}
         />
       </div>
@@ -53,7 +64,13 @@ class ShopPage extends React.Component {
   }
 }
 
+const mapStateToProps = () =>
+  createStructuredSelector({
+    isFetching: selectIsCollectionFetched,
+  });
+
 const mapDispatchToProps = (dispatch) => ({
-  updateCollections: (collectionsMap) => dispatch(setShopData(collectionsMap)),
+  fetchCollectionsSuccessAsync: () => dispatch(fetchCollectionsSuccessAsync()),
 });
-export default connect(null, mapDispatchToProps)(ShopPage);
+
+export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);

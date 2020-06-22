@@ -49,7 +49,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route exact path="/" component={HomePage} />
-          <Route exact path="/shop" component={ShopPage} />
+          <Route path="/shop" component={ShopPage} />
           <Route
             exact
             path="/authentication"
@@ -58,7 +58,6 @@ class App extends React.Component {
             }
           />
           <Route exact path="/checkout" component={CheckoutPage} />
-          <Route path="/shop/:categoryId" component={CategoryPage} />
         </Switch>
       </div>
     );
