@@ -1,8 +1,9 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { createStructuredSelector } from "reselect";
 import CollectionOverview from "../collection-overview/collection-overview.component";
 import CategoryPage from "../category-page/category-page.component";
+import CollectionOverviewContainer from "../collection-overview/collection-overview.container";
 // import {
 //   firestore,
 //   convertCollectionSnapshotToMap,
@@ -13,7 +14,6 @@ import { selectIsCollectionFetched } from "../../redux/shop/shop.selector";
 
 import WithSpinner from "../with-spinner/with-spinner.component";
 
-const CollectionOverviewWithSpinner = WithSpinner(CollectionOverview);
 const CategoryOverviewWithSpinner = WithSpinner(CategoryPage);
 
 class ShopPage extends React.Component {
@@ -44,19 +44,18 @@ class ShopPage extends React.Component {
 
   render() {
     const { match, isFetching } = this.props;
+
     return (
       <div className="shop-page">
         <Route
           exact
           path={`${match.path}`}
-          render={(props) => (
-            <CollectionOverviewWithSpinner isLoading={!isFetching} {...props} />
-          )}
+          component={CollectionOverviewContainer}
         />
         <Route
           path={`${match.path}/:categoryId`}
           render={(props) => (
-            <CategoryOverviewWithSpinner isLoading={!isFetching} {...props} />
+            <CategoryOverviewWithSpinner isLoading={isFetching} {...props} />
           )}
         />
       </div>

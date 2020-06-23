@@ -3,11 +3,11 @@ import { SpinnerOverlay, SpinnerContainer } from "./with-spinner.styles";
 
 const WithSpinner = (WarappedComponent) => ({ isLoading, ...otherProps }) =>
   isLoading ? (
+    <WarappedComponent {...otherProps} />
+  ) : (
     <SpinnerContainer>
       <SpinnerOverlay />
     </SpinnerContainer>
-  ) : (
-    <WarappedComponent {...otherProps} />
   );
 
 export default WithSpinner;

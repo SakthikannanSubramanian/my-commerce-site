@@ -61,7 +61,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/ad
 
 ### Deployment
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+First send a command "heroku login" to login to heroku, Once logged in send "git push heroku master"
 
 ### `yarn build` fails to minify
 
