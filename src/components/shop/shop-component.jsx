@@ -10,6 +10,7 @@ import CollectionOverviewContainer from "../collection-overview/collection-overv
 // } from "../../firebase/firebase.utils";
 import { connect } from "react-redux";
 import { fetchCollectionsSuccessAsync } from "../../redux/shop/shop.actions";
+import { fetchCollectionsStart } from "../../redux/shop/shop.actions";
 import { selectIsCollectionFetched } from "../../redux/shop/shop.selector";
 
 import WithSpinner from "../with-spinner/with-spinner.component";
@@ -24,8 +25,9 @@ class ShopPage extends React.Component {
   // unSubscribeFromSnapShot = null;
 
   componentDidMount() {
-    const { fetchCollectionsSuccessAsync } = this.props;
-    fetchCollectionsSuccessAsync();
+    const { fetchCollectionsStart } = this.props;
+    //fetchCollectionsSuccessAsync(); //used with redux thunk
+    fetchCollectionsStart(); // used with redux saga
     // const { updateCollections } = this.props;
     // const collectionRef = firestore.collection("collections");
     // this.unSubscribeFromSnapShot = collectionRef.onSnapshot(
@@ -69,7 +71,8 @@ const mapStateToProps = () =>
   });
 
 const mapDispatchToProps = (dispatch) => ({
-  fetchCollectionsSuccessAsync: () => dispatch(fetchCollectionsSuccessAsync()),
+  //fetchCollectionsSuccessAsync: () => dispatch(fetchCollectionsSuccessAsync()), //redux thunk
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);

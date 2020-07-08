@@ -26,7 +26,7 @@ export const directorySections = [
       "https://upload.wikimedia.org/wikipedia/commons/b/bd/Rasmalai_-_the_King_of_Indian_Sweets.JPG",
     size: "large",
     id: 5,
-    linkUrl: "shop/short-bites",
+    linkUrl: "shop/short bites",
   },
   {
     title: "cakes",

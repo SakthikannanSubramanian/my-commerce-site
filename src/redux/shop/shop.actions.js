@@ -18,20 +18,20 @@ export const fetchCollectionFailure = (errorMessage) => ({
   payload: errorMessage,
 });
 
-export const fetchCollectionsSuccessAsync = () => {
-  return (dispatch) => {
-    const collectionRef = firestore.collection("collections");
-    dispatch(fetchCollectionsStart());
+// export const fetchCollectionsSuccessAsync = () => {
+//   return (dispatch) => {
+//     const collectionRef = firestore.collection("collections");
+//     dispatch(fetchCollectionsStart());
 
-    collectionRef
-      .get()
-      .then(
-        //instead of snapshot you can do .get() or native fetch() method with API URL. snapshot is exactly like the Observer Observable pattern
-        (snapShot) => {
-          const collectionsMap = convertCollectionSnapshotToMap(snapShot);
-          dispatch(fetchCollectionsSuccess(collectionsMap));
-        }
-      )
-      .catch((error) => dispatch(fetchCollectionFailure(error.message)));
-  };
-};
+//     collectionRef
+//       .get()
+//       .then(
+//         //instead of snapshot you can do .get() or native fetch() method with API URL. snapshot is exactly like the Observer Observable pattern
+//         (snapShot) => {
+//           const collectionsMap = convertCollectionSnapshotToMap(snapShot);
+//           dispatch(fetchCollectionsSuccess(collectionsMap));
+//         }
+//       )
+//       .catch((error) => dispatch(fetchCollectionFailure(error.message)));
+//   };
+// };
