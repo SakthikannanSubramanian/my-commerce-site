@@ -3,12 +3,15 @@ import { connect } from "react-redux";
 import "./sign-in.style.scss";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
+// import {
+//   auth,
+//   signInWithGoogle,
+//   googleProvider,
+// } from "../../firebase/firebase.utils";
 import {
-  auth,
-  signInWithGoogle,
-  googleProvider,
-} from "../../firebase/firebase.utils";
-import { googleSignInStart } from "../../redux/user/user.actions";
+  googleSignInStart,
+  emailSignInStart,
+} from "../../redux/user/user.actions";
 import { withRouter } from "react-router-dom";
 
 class SignIn extends React.Component {
@@ -22,15 +25,20 @@ class SignIn extends React.Component {
   }
 
   handleSubmit = async (event) => {
-    const { email, password } = this.state;
     event.preventDefault();
-    try {
-      await auth.signInWithEmailAndPassword(email, password);
-      this.setState({ email: "", password: "" });
-      this.props.history.push("/");
-    } catch (error) {
-      alert(error);
-    }
+
+    const { email, password } = this.state;
+    const { emailSignInStart } = this.props;
+
+    emailSignInStart(email, password);
+    //this is now handled with help of redux saga
+    // try {
+    //   await auth.signInWithEmailAndPassword(email, password);
+    //   this.setState({ email: "", password: "" });
+    //   this.props.history.push("/");
+    // } catch (error) {
+    //   alert(error);
+    // }
   };
 
   handleChange = (event) => {
@@ -79,6 +87,8 @@ class SignIn extends React.Component {
 
 const mapDispatchToProps = (dispatch) => ({
   googleSignInStart: () => dispatch(googleSignInStart()),
+  emailSignInStart: (email, password) =>
+    dispatch(emailSignInStart({ email, password })),
 });
 
 export default connect(null, mapDispatchToProps)(withRouter(SignIn));

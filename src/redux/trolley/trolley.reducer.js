@@ -1,6 +1,7 @@
 import { INITIAL_STATE } from "./trolley-initial-state";
 import TrolleyActionType from "./trolley.types";
 import { addItemToTrolley, reduceItemFromTrolley } from "./trolley.utils";
+import TrolleyActionTypes from "./trolley.types";
 
 const trolleyReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
@@ -25,6 +26,11 @@ const trolleyReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         trolleyItems: reduceItemFromTrolley(state.trolleyItems, action.payload),
+      };
+    case TrolleyActionTypes.EMPTY_TROLLEY:
+      return {
+        ...state,
+        trolleyItems: [],
       };
     default:
       return state;

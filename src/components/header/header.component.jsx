@@ -7,6 +7,7 @@ import MiniTrolley from "../mini-trolley/mini-trolley.component";
 import { createStructuredSelector } from "reselect";
 import { selectShowMiniTrolley } from "../../redux/trolley/trolley.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selector";
+import { signOutStart } from "../../redux/user/user.actions";
 
 import {
   HeaderContainer,
@@ -17,7 +18,7 @@ import {
   HeaderLabel,
 } from "./header.styles";
 
-const Header = ({ currentUser, showMiniTrolley }) => (
+const Header = ({ signOutStart, currentUser, showMiniTrolley }) => (
   <HeaderContainer>
     <LogoContainer to="/">
       <Logo className="logo" />
@@ -32,7 +33,12 @@ const Header = ({ currentUser, showMiniTrolley }) => (
       <OptionLink to="/shop">SHOP</OptionLink>
       <OptionLink to="/shop">CONTACT</OptionLink>
       {currentUser ? (
-        <OptionLink as="div" onClick={() => auth.signOut()}>
+        <OptionLink
+          as="div"
+          onClick={() => {
+            signOutStart();
+          }}
+        >
           SIGN OUT
         </OptionLink>
       ) : (
@@ -49,4 +55,8 @@ const mapStateToProps = createStructuredSelector({
   showMiniTrolley: selectShowMiniTrolley,
 });
 
-export default connect(mapStateToProps)(Header);
+const mapDispatchToProps = (dispatch) => ({
+  signOutStart: () => dispatch(signOutStart()),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

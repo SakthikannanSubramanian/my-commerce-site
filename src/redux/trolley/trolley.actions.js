@@ -14,3 +14,6 @@ export const reduceItemFromTrolley = (item) => ({
   type: TrolleyActionTypes.REDUCE_FROM_TROLLEY,
   payload: item,
 });
+export const emptyTrolley = () => ({
+  type: TrolleyActionTypes.EMPTY_TROLLEY,
+});
