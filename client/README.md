@@ -66,3 +66,9 @@ First send a command "heroku login" to login to heroku, Once logged in send "git
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+### Did the below steps to deploy the server to heroku 
+* Make sure the app is linked with heroku (i.e git is linked with heroku)
+* Send command "heroku buildpacks"
+* heroku buildpacks:remove https://github.com/mars/create-react-app-buildpack
+* 
