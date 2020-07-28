@@ -10,7 +10,7 @@ if (process.env.NODE_ENV !== "production") {
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
-const port = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 app.use(bodyParser.json()); //this is to say any of the request coming in to read the body part and convert it to json
 app.use(bodyParser.urlencoded({ extended: true }));
