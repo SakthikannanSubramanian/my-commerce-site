@@ -71,4 +71,6 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/tr
 * Make sure the app is linked with heroku (i.e git is linked with heroku)
 * Send command "heroku buildpacks"
 * heroku buildpacks:remove https://github.com/mars/create-react-app-buildpack
-* 
+* git push heroku master
+* For .env which holds our secret key we need to do a config in heroku 
+* to do that config and set config we need to `heroku config:set STRIPE_SECRET_KEY=<YOUR SECRET KEY>`
